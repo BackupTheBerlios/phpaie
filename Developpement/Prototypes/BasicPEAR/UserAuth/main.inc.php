@@ -82,9 +82,9 @@
 
   $myDB = array('localhost' => array('host' => 'localhost',
                                      'type' => 'mysql',
-                                     'name' => 'PHPAIE_LOGO',
+                                     'name' => 'yourBase',
                                      'user' => 'PHPAIE',
-                                     'pwd'  => 'Koly76Xobo69')
+                                     'pwd'  => 'Passwd')
                );
 
 
