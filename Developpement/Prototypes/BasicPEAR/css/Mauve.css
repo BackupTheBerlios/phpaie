@@ -1,0 +1,49 @@
+P {
+font-size : 9px;
+font-family : Arial;
+color : #000000;
+text-align : left;
+margin : 10;
+}
+H3 {
+font-family : Verdana;
+color : #000000;
+text-align : center;
+}
+H2 {
+font-family : Verdana;
+color : #000000;
+text-align : center;
+}
+H1 {
+font-family : Verdana;
+color : #000000;
+text-align : center;
+}
+BODY {
+font-size : 10px;
+font-family : Arial;
+color : #000000;
+background : #8080FF url() fixed repeat;
+}
+BLOCKQUOTE {
+font-size : 9px;
+font-family : Times New Roman;
+color : #C0C0C0;
+text-align : left;
+}
+A:hover {
+font-weight : bold;
+font-size : 10px;
+font-family : Arial;
+color : #000000;
+background : transparent;
+text-decoration : none;
+}
+A:visited, A:link, A:active {
+font-weight : bold;
+font-size : 10px;
+font-family : Arial;
+color : #0000FF;
+text-decoration : none;
+}
