@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<daodefinition version="1.0">
+
+ <datasource>
+   <tables>
+      <table name="CopixCapability" primary="yes" />
+   </tables>
+ </datasource>
+
+ <properties>
+  <property name="name_ccpb"
+         captioni18n="copix:profile.dao.CopixCapability.fields.name_ccpb"
+         pk="true"
+         required="yes"
+         type="varchar"
+         maxlength="255"
+         />
+
+  <property name="description_ccpb"
+         captioni18n="copix:profile.dao.CopixCapability.fields.description_ccpb"
+         type="varchar"
+         maxlength="255"
+         required="yes"
+         />
+
+ </properties>
+</daodefinition>

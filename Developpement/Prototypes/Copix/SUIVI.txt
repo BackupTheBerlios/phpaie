@@ -1,0 +1,100 @@
+Suivi des essais avec Copix
+
+Stand by : 
+- gestion d'un contrat,  en attente : comment faire avec les références "cachées" ?
+
+Copix 2.1 est toujours en GPL dans les fichiers...
+
+TODO: 
+- quid d'un menu dynamique
+- tester Smarty 2.6.2 et PHP5
+- entités Métier :
+  * vérifier les possibilités de rajouter des propriétés aux objets métier fournis par les DAO
+  * définir une classe Registry ou Repository pour accéder aux objets Métier
+- peut on remplacer les tables HTML par des listes HTML avec CSS ?
+
+
+>>> Consulter le site : http://ljouanneau.com/softs/javascript/
+
+>>> Il y a plein de tables dans les templates et les pages => à remplacer ?
+
+12/ Le site de phpaie.net fonctionne sous PHP 4.2.3 => __CLASS__ n'est pas reconnu !
+    Or __CLASS__ est utilisé dans les fonctions d'instanciation de HttpRequest et HttpSession.
+    la fonction get_class n'est pas la solution, car cela rend les appels statiques impossibles 
+    (classe non instanciée et donc "$this" innaccessible, mais pas de message d'erreur immédiat...!)
+    Il faut coder en dur le nom des classes dans ces cas là.
+
+11/ Modif de CopixDbConnection : prise en compte de clause "table AS nametable" pour
+    les options "update", "insert" et "delete"
+
+10/ pb avec la fonction header() et "locate:" : l'adresse est renvoyée  avec "&amp;" et non "&"
+    le nom du module n'est pas reconnu et Copix va chercher l'action à la racine du projet ...
+    => il faut utiliser le paramètre $forhtml avec la valeur false pour CopixUrl::getUrl()
+
+9/ comment faire une liste "sélectionnable" avec une table ?
+
+8/ dans CopixDAOFactory::_getUserPath, il me semble que le test de validité est inversé ?!
+
+7/ dans CopixDAOFactory::getDAORecordName, la racine "CompiledDAORecord" est systématiquement ajoutée au mot clé de l'objet. Pourquoi ? Ne peut on laisser l'utilisateur totalement libre du nom ? Ou du moins lui laisser le choix. 
+    et de même avec "DAO" pour les classes utilisateurs associées
+
+6/ passage à la version CVS du 4/4/4 : 
+   le point 2 n'est toujours pas pris en compte dans copix.inc.php
+
+5/ utilisation de CopixI18N : celui-ci nécessite que le controller soit instancié si on veut utiliser la 
+   fonction membre CopixI18N::get sans spécifier le paramètre $locale
+   => dans un tel cas appeler 
+      CopixI18N::get( 'xxx' , null, 'fr');
+      
+   Mais de toute façon il faut modifier la fonction membre _loadLocales qui est appelée via le constructeur
+   de CopixI18N car celle ci cherche à utiliser le cache via l'instance du controller
+   => remplacer les 2 tests 
+      if ($GLOBALS['COPIX']['CONFIG']->compile_resource){
+   par
+      if (  isSet($GLOBALS['COPIX']['CONFIG'])
+         && $GLOBALS['COPIX']['CONFIG']->compile_resource )
+         {
+   
+
+4/ Passage à la version 2.1 RC1 :
+- le point 2 n'est toujours pas réglé
+
+3/ Choix de l'emplacement de htmlMimeMail
+
+Afin d'avoir un traitement homogène avec Smarty, ajouter une definition par defaut
+de COPIX_HTMLMIMEMAIL_PATH dans utils/copix/copix.inc.php
+
+Et la redéfinir si nécessaire dans project/project.inc.php
+
+Modifier en conséquence project/config/copixmailer.plugin.conf.php
+
+2/ Choix de l'emplacement de Smarty
+
+Actuellement l'emplacement de Smarty est définir 
+par la constante COPIX_SMARTY_PATH. Celle-ci est spécifiée 
+dans utils/copix/copix.inc.php de façon non conditionnelle.
+
+Objectifs : 
+- ne pas être obliger de dupliquer utils/copix dans tous les projets
+- pouvoir spécifier l'emplacement de Smarty de façon séparée pour chaque projet
+
+Proposition : les chemins des librairies "externes" restent spécifiés par défaut 
+dans utils/copix/copix.inc.php, mais de façon conditionnelle avec
+if ( ! defined('COPIX_xxxx_PATH') ) define('COPIX_xxxx_PATH','yyyyy');
+On pourra alors redéfinir COPIX_xxxx_PATH dans project/project.inc.php par exemple
+
+Nota : project.inc.php doit être requis après copix.inc.php car en fin de celui-ci, le 
+fichier de définition de la classe ProjectCoordination est appelé. Or cette dernière est 
+dérivée de la classe CopixCoordination définie dans 
+utils/copix/core/CopixCoordination.class.php
+
+
+1/ Choix de l'emplacement des fichiers WEB (images, javascripts, styles...)
+Dans l'application par défaut (Copix/www/), le template principal renvoie
+à des sous-répertoires placés au même endroit que index.php
+Or il serait judicieux de découpler les deux. Pour cela il faut utiliser une 
+variable ($WEB_FILE_PATH par ex) et :
+- modifier le template project/templates/main.ptpl : ajouter la variable aux endroits ad hoc
+- modifier la fonction _processStandard de la classe ProjectCoordination
+- définir dans project.option.php une constante COPIX_WEB_FILE_PATH spécifiant 
+  le chemin par défaut des fichiers WEB

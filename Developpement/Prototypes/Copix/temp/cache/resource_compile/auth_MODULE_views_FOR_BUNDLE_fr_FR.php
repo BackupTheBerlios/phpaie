@@ -1,0 +1,1 @@
+<?php $_loaded=array ('views.login.s0001'=>'Identifiez-vous.', 'views.login.s0002'=>'Utilisateur  :', 'views.login.s0003'=>'Mot de passe :', 'views.login.s0004'=>'Identification incorrecte.', 'views.login.s0005'=>'Déconnexion.', 'views.login.s0006'=>'Valider'); ?>

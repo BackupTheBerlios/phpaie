@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<daodefinition version="1">
+
+<datasource>
+  <connection name="" />
+  <tables>
+    <table name="branch" tablename="test_copix_branch" primary="yes" />
+  </tables>
+</datasource>
+
+<properties>
+
+    <property name="branch_id" 
+           fieldname="branch_id"
+           required="yes" 
+           pk="true" 
+           type="autoincrement"
+           sequence="branch_id" 
+           caption="Branch Id"/>
+
+    <property name="branch_name" 
+           fieldname="branch_name"
+           type="string" 
+           maxlength="30" 
+           caption="Branch's name"/>
+
+    <property name="branch_status" 
+           fieldname="branch_status"
+           type="string" 
+           maxlength="30" 
+           caption="Branch's login"/>
+
+    <property name="branch_email" 
+           fieldname="branch_email"
+           type="string" 
+           maxlength="80" 
+           caption="Branch's email"/>
+
+</properties>
+
+<sequence>
+  <name>branch_id</name>
+  <start>3</start>
+</sequence>
+
+</daodefinition>

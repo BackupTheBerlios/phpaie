@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<daodefinition version="1">
+ <datasource>
+   <tables>
+      <table name="CopixUserGroup"  primary="yes"/>
+   </tables>
+ </datasource>
+
+ <properties>
+  <property name="id_cgrp"
+         captioni18n="copix:profile.dao.CopixGroup.fields.id_cgrp"
+         pk="true"
+         required="yes"
+         type="numeric"
+         />
+
+  <property name="login_cusr"
+         captioni18n="copix:profile.dao.CopixUser.fields.login_cusr"
+         type="varchar"
+         maxlength="50"
+         required="yes"
+         pk="true"
+         />
+ </properties>
+</daodefinition>

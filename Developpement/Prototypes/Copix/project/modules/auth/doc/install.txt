@@ -1,0 +1,6 @@
+CSS styles
+We expect #login_zone to be defined in the css stylesheet.
+This is used for the defautl template for the login zone.
+
+We expect .connectButton to be defined in the css styleSheet.
+This is used for the connection button.

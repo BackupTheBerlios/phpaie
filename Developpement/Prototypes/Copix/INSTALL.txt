@@ -1,0 +1,123 @@
+Prototype Phpaie sous Copix.
+
+Sommaire
+- Préambule
+- Installation
+  * Introduction
+  * Configuration Apache
+  * Configuration PHP
+  * Configuration du SGBD
+  * Configuration PhPaie sous Copix
+- Dépendences
+- Remerciements
+ 
+PREAMBULE
+
+Le présent paquetage se suffit à lui même. Toutes les bibliothèques nécessaires sont 
+incluses. Par contre il suppose que soient disponibles :
+- un serveur WEB,
+- un SGBD,
+- le langage PHP.
+
+Avant de commencer, il faut a minima indiquer la BDD utilisée. Les autres paramètres de configuration ont 
+tous des valeurs par défaut, dont certaines devront sans doute être adaptées.
+
+Le point d'entrée de l'application est CopixWebApp/index.php. A partir de cette page d'accueil, sélectionner 
+"Pour commencer à travailler" : identifiez-vous avec le login "admin" et "admin" comme mot de passe.
+
+
+INSTALLATION 
+
+1/ INTRODUCTION
+
+Ce développement pour Phpaie s'insère dans l'architecture générale du framework
+Copix 2.1 en cours de finalisation (http://copix.aston.fr).
+
+Il suffit de copier le répertoire CopixWebApp dans le DocumentRoot de 
+votre serveur WEB (ou dans un répertoire quelconque accessible au serveur.) 
+
+Nota : le serveur utilisé en développement est Apache. Je n'ai aucune idée sur 
+       la possibilité d'utiliser un autre serveur.
+
+Le point d'entrée de l'application est CopixWebApp/index.php
+(cf. ci-dessous la note concernant DirectoryIndex pour Apache)
+
+Nota: - Le présent prototype utilise un SGBD. Une BDD pour MySql est fournie (cf. ci-
+        après pour l'utiliser).
+      - La configuration du présent prototype n'utilise pas les redirections des URL
+        par Apache (cf. ci-après pour activer de telles redirections).
+      - La version de Copix 2.1 incluse dans ce prototype comporte plusieurs corrections
+        * l'une permet d'utiliser une installation de Smarty autre que celle
+          embarquée avec Copix ;
+        * les autres portent sur les DAO.
+
+
+2/ CONFIGURATION APACHE
+
+Normalement aucune modification n'est nécessaire dans la configuration 
+Apache, en dehors de :
+- ajouter 'index.php' à la liste de DirectoryIndex
+  dans conf/httpd.conf de Apache.
+- éventuellement mettre AllowOverride avec FileInfo dans le <Directory> du répertoire 
+  où vous avez placé le paquetage. Ceci afin d'activer la prise en compte 
+  les fichiers .htaccess.
+- éventuellement charger le module url_rewrite :
+         LoadModule rewrite_module modules/mod_rewrite.so
+  Nota: la configuration du présent prototype ne l'utilise pas, mais 
+        cette option peut être activée (cf. ci-après). Elle offre des possibilités 
+        de "cacher" les chemins et les noms des fichiers, ce qui accroit notablement
+        la sécurité du site.
+
+3/ CONFIGURATION PHP
+
+Les indications ci-après sont spécifiques à MS Windows. A adapter pour tout autre OS.
+
+- éventuellement installer browscap.ini, et configurer PHP.INI en 
+  conséquence, par exemple :
+       /windows/browscap.ini 
+  Nota : browscap.ini est téléchargeable depuis 
+         www.garykeith.com/browsers/downloads.asp
+  Nota : pour savoir si on javascript est disponible sur le navigateur 
+         client, il vaut mieux utiliser <NOSCRIPT>. Cependant vérifier si
+         ce marqueur fontionne de façon identique dans tous les navigateurs.
+
+4/ CONFIGURATION DU SGBD
+
+On suppose ici que MySql est le SGBD utilisé. Des fichiers de BDD sont fournis prêts 
+à l'emploi : utiliser le fichier CopixWebApp/www/DataBase/CopixWebApp.sql pour générer la BDD.
+
+5/ CONFIGURATION PHPAIE SOUS COPIX
+
+Ce prototype de Phpaie utilise Copix 2.1 avec le module d'authentification.
+
+Copix a pour particularité de ne pas centraliser les informations de configuration 
+d'une application. On trouvera celles-ci dans les fichiers suivants :
+- CopixWebApp/project.inc.php : spécifie l'emplacement 
+  * de COPIX 
+  * des bibliothèques directement utilisées par ce dernier telles que Smarty,
+  * du fichier copix.inc.php
+  * des fichiers projets project.option.php et copix.conf.php
+- project.option.php : définition de toute une série de constantes de paramétrage
+- copix.conf.php : une autre série de paramètres du projet mais ici sous forme de 
+  variables membres de l'instance de CopixConfig (en fait dans le prototype, l'initialisation
+  des paramètres a été déplacée dans RealConfig::init() ). 
+  
+Parcourir ces 2 derniers fichiers pour s'assurer que les valeurs utilisées correspondent 
+à l'installation de Phpaie sur votre site. En particulier :
+- utilisation de mod_rewrite sous Apache,
+- accès à une base de donnée.
+
+
+DEPENDENCES
+
+Ce protopype utilise les bibliothèques suivantes :
+- Copix bien évidemment (copix.aston.fr - GPL, en attente de passer en LGPL)
+- Smarty, utilisé par défaut par Copix (smarty.php.net - LGPL)
+- Pear (pear.php.net - PHP-License sauf indication contraire)
+Nota : pour Pear, préciser quelles sont les bibliothèques vraiment utilisées.
+
+REMERCIEMENTS
+
+Outre les bibliothèques ci-dessus, des parties de code extraits des projets 
+Phrame (phrame.sourceforge.net - LGPL) et Combine (combine.giffin.org - LGPL)
+ont été utilisés.

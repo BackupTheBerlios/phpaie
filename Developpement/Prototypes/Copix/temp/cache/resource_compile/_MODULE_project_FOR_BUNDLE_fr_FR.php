@@ -1,0 +1,1 @@
+<?php $_loaded=array ('project.title'=>'Phpaie', 'project.title.bar'=>'PhPaie : la paie du XXIe siècle !'); ?>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<daodefinition version="1">
+
+<datasource>
+  <connection name="" />
+  <tables>
+    <table name="worker" tablename="test_copix_worker" primary="yes" />
+  </tables>
+</datasource>
+
+<properties>
+
+    <property name="worker_id" 
+           fieldname="worker_id"
+           required="yes" 
+           pk="true" 
+           type="autoincrement" 
+           caption="Worker Id"/>
+
+    <property name="first_name" 
+           fieldname="worker_first_name"
+           type="string" 
+           maxlength="40" 
+           caption="First name"/>
+
+    <property name="last_name"
+           fieldname="worker_last_name" 
+           type="string" 
+           maxlength="40" 
+           caption="Last name"/>
+
+    <property name="email"
+           fieldname="worker_email" 
+           type="string" 
+           maxlength="60" 
+           caption="Email address"/>
+  
+</properties>
+
+<sequence><name>worker_id</name>
+  <start>4</start>
+</sequence>
+
+</daodefinition>

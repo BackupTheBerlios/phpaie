@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<daodefinition version="1">
+
+<datasource>
+  <connection name="" />
+  <tables>
+    <table name="contract" 
+           tablename="test_copix_contract"
+           primary="yes"
+           />
+    <table name="worker" 
+           tablename="test_copix_worker"
+           comment="By default inner joint"
+           />
+    <table name="branch" 
+           tablename="test_copix_branch"
+           comment="By default inner joint"
+           />
+  </tables>
+</datasource>
+
+<properties>
+
+    <property name="contract_id"
+           fieldname="contract_id" 
+           required="yes" 
+           pk="true" 
+           type="autoincrement" 
+           caption="Contract Id"
+           />
+
+    <property name="worker_id" 
+           fieldname="worker_id" 
+           required="yes" 
+           type="int"
+           fktable="worker"
+           fkfieldname="worker_id" 
+           caption="Worker id"
+           comment="to start, we use directly id number"
+           />
+
+    <property name="worker_first_name" 
+           table="worker"
+           fieldname="worker_first_name" 
+           required="yes" 
+           type="string"
+           caption="Worker first name"
+           />
+
+    <property name="worker_last_name" 
+           table="worker"
+           fieldname="worker_last_name" 
+           required="yes" 
+           type="string"
+           caption="Worker last name"
+           />
+
+    <property name="branch_id" 
+           fieldname="branch_id" 
+           required="yes" 
+           type="int" 
+           fktable="branch"
+           fkfieldname="branch_id" 
+           caption="Branch id"
+           comment="to start, we use directly id number"
+           />
+
+    <property name="branch_name" 
+           table="branch"
+           fieldname="branch_name" 
+           required="yes" 
+           type="string"
+           caption="Branch name"
+           />
+
+    <property name="wage" 
+           fieldname="wage" 
+           type="int" 
+           caption="Contract wage"
+           />
+
+    <property name="begin_date" 
+           fieldname="begin_date" 
+           type="timestamp" 
+           caption="Begin of the contract"
+           />
+
+    <property name="end_date" 
+           fieldname="end_date" 
+           type="timestamp" 
+           caption="End of the contract"
+           />
+
+</properties>
+
+<sequence><name>contract_id</name>
+  <start>4</start>
+</sequence>
+
+</daodefinition>

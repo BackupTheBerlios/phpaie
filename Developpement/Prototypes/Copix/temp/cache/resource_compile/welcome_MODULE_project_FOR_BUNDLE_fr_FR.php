@@ -1,0 +1,1 @@
+<?php $_loaded=array ('project.file.welcome.information'=>'information_fr.htm'); ?>

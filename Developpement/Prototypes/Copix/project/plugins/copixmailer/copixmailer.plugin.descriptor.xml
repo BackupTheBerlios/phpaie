@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<plugin name="copixmailer">
+   <version major="" minor="" status="" copixversion=""  date="" />
+   <authors>
+      <author name="Gerald Croes" email="gcroes@aston.fr" website="http://www.phpside.org" role="creator" />
+   </authors>
+   <description>Permet surtout de stocker des paramètres de
+   configuration pour le mailer de Copix. </description>
+   <infos />
+</plugin>

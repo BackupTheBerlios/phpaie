@@ -1,0 +1,54 @@
+TODO
+
+00/ Définir de façon plus spécifique l'identité entre objets ? Identité si 
+   ils sont de même classe et que leur Id est le même,
+   même si leurs autres variables différent ?
+   
+   Voir aussi la cas où seule une partie des variables membres définissent l'état de l'objet. L'égalité ne doit
+   porter que sur celles-ci.
+
+
+0/ Rendre tous les templates conformes à XHTML/CSS et créer les CSS nécessaires pour un look par défaut.
+
+1/ Pour CopixActionReturn : il n'est pas très judicieux que ce soit du texte qui soit renvoyé,
+   que ce soit pour un COPIX_AR_REDIRECT ou un  COPIX_AR_DISPLAY
+   Surcharger CopixActionReturn pour définir un constructeur qui prend des instance ad hoc comme paramètre
+
+2/ Ajouter des menus dynamiques.
+
+   Prop. : utiliser PHP Layers Menu
+
+3/ Sauf erreur de ma part, Copix ne comporte pas de classe de gestion des informations 
+   contenues dans une requête HTTP.
+   A faire et y ajouter une gestion des contrôles synchrones côtés client et serveur
+   
+   Utiliser (?) www.katana-inc.com/formsess : pour Smarty, avec 
+   * gestion de formulaire
+   * validation double :serveur (ok) et client (en cours)
+   
+   
+4/ Pour l'accès aux données, utiliser un pattern Repository pour "masquer" les DAO. Y 
+   gérer un cache des objets métiers déjà chargées.
+   
+   Utiliser ces Repository pour gérer différents types de source,
+   en particulier une avec les données codées en dur, pour effectuer les tests 
+   sans dépendre d'une BDD.   
+   
+5/ Les prototypes devront dans un 1er temps pouvoir fonctionner avec des SGBD sans transaction.    
+
+6/ Quid du remote scripting ?
+
+6 bis/ Sur le site www.pengoworks.com, article très intéressant 
+   sur l'utilisation des iframe/ilayer pour créer des pseudo
+   liaisons permanentes (remote scripting) entre client et 
+   serveur (en cachant des liens de chargement de fichier qui 
+   seront activés de façon ad hoc)
+  
+   Autres trucs : comment faire des fenêtres multi volet (onglet)
+
+   Le code de ce site est sous LGPL   
+  
+7/ Sur le site pehppy.info, on trouve le même concept.
+
+   Le code de ce site est sous LGPL   
+

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<daodefinition>
+
+<name>CopixWebApp</name>
+<create>yes</create>
+<overwrite>yes</overwrite>
+
+<fields>
+  <name>user</name>
+  <description>User list: identification and rights</description>
+
+  
+
+    <field>
+      <name>user_id</name>
+      <required>yes</required>
+      <PK>true</PK>
+      <type>int</type>
+      <notnull>yes</notnull>
+      <default>0</default>
+      <caption>User Id</caption>
+    </field>
+
+    <field>
+      <name>user_name</name>
+      <type>string</type><maxlength>30</maxlength>
+      <notnull>yes</notnull>
+      <default/>
+      <caption>User's name</caption>
+    </field>
+
+    <field>
+      <name>user_login</name>
+      <type>string</type><maxlength>30</maxlength>
+      <notnull>yes</notnull>
+      <default/>
+      <caption>User's login</caption>
+    </field>
+
+    <field>
+      <name>user_password</name>
+      <type>string</type><maxlength>32</maxlength>
+      <notnull>yes</notnull>
+      <default/>
+      <caption>User's password</caption>
+    </field>
+
+    <field>
+      <name>user_level</name>
+      <type>int</type>
+      <notnull>yes</notnull>
+      <default>0</default>
+      <caption>User's rights level</caption>
+    </field>
+
+    
+
+    
+
+    
+
+  
+  
+
+</fields>
+
+<fields>
+  <name>branch</name>
+  <description>Branch list</description>
+
+  
+
+    <field>
+      <name>branch_id</name>
+      <required>yes</required>
+      <PK>true</PK>
+      <type>int</type>
+      <notnull>yes</notnull>
+      <default>0</default>
+      <caption>Branch Id</caption>
+    </field>
+
+    <field>
+      <name>branch_name</name>
+      <type>string</type><maxlength>30</maxlength>
+      <notnull>yes</notnull>
+      <default/>
+      <caption>Branch's name</caption>
+    </field>
+
+    <field>
+      <name>branch_status</name>
+      <type>string</type><maxlength>30</maxlength>
+      <notnull>yes</notnull>
+      <default/>
+      <caption>Branch's login</caption>
+    </field>
+
+    <field>
+      <name>branch_email</name>
+      <type>string</type><maxlength>80</maxlength>
+      <default/>
+      <caption>Branch's email</caption>
+    </field>
+
+    
+
+    
+
+  
+  
+
+</fields>
+
+<fields><name>worker</name><description>Worker table</description>
+
+
+
+    <field>
+      <name>worker_id</name>
+      <required>yes</required>
+      <PK>true</PK>
+      <type>int</type>
+      <notnull>yes</notnull>
+      <default>0</default>
+      <caption>Worker Id</caption>
+    </field>
+
+    <field>
+      <name>worker_first_name</name>
+      <type>string</type>
+      <maxlength>40</maxlength>
+      <caption>First name</caption>
+    </field>
+
+    <field>
+      <name>worker_last_name</name>
+      <type>string</type>
+      <maxlength>40</maxlength>
+      <notnull>yes</notnull>
+      <default/>
+      <caption>Last name</caption>
+    </field>
+
+    <field>
+      <name>worker_email</name>
+      <type>string</type>
+      <maxlength>60</maxlength>
+      <caption>Email address</caption>
+    </field>
+
+    
+
+    
+
+
+  
+</fields>
+
+<fields><name>contract</name><description>Contract table</description>
+
+
+
+    <field>
+      <name>contract_id</name>
+      <required>yes</required>
+      <PK>true</PK>
+      <type>int</type>
+      <notnull>yes</notnull>
+      <default>0</default>
+      <caption>Contract Id</caption>
+    </field>
+
+    <field>
+      <name>worker_id</name>
+      <required>yes</required>
+      <type>int</type>
+      <notnull>yes</notnull>
+      <default>0</default>
+      <caption>Worker id</caption>
+    </field>
+
+    <field>
+      <name>branch_id</name>
+      <required>yes</required>
+      <type>int</type>
+      <notnull>yes</notnull>
+      <default>0</default>
+      <caption>Branch id</caption>
+    </field>
+
+    <field>
+      <name>wage</name>
+      <type>int</type>
+      <default>0</default>
+      <caption>Contract wage</caption>
+    </field>
+
+    <field>
+      <name>begin_date</name>
+      <type>timestamp</type>
+      <caption>Begin of the contract</caption>
+    </field>
+
+    <field>
+      <name>end_date</name>
+      <type>timestamp</type>
+      <caption>End of the contract</caption>
+    </field>
+
+    
+
+  
+</fields>
+
+<sequence>
+  <name>user_id</name>
+  <start>4</start>
+</sequence>
+
+<sequence>
+  <name>branch_id</name>
+  <start>3</start>
+</sequence>
+
+<sequence><name>worker_id</name>
+  <start>4</start>
+</sequence>
+
+<sequence><name>contract_id</name>
+  <start>4</start>
+</sequence>
+
+</daodefinition>

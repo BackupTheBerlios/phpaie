@@ -1,0 +1,1 @@
+This directory can only store Smarty plugins, but no Copix plugins

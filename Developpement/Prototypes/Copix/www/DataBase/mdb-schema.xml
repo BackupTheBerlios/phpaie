@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<database>
+
+<name>CopixWebApp</name>
+<create>1</create>
+<overwrite>1</overwrite>
+
+<table>
+  <name>user</name>
+  <description>User list: identification and rights</description>
+
+  <declaration>
+
+    <field>
+      <name>user_id</name>
+      <required>true</required>
+      <primarykey>true</primarykey>
+      <type>integer</type>
+      <notnull>1</notnull>
+      <default>0</default>
+      <description>User Id</description>
+    </field>
+
+    <field>
+      <name>user_name</name>
+      <type>text</type><length>30</length>
+      <notnull>1</notnull>
+      <default></default>
+      <description>User's name</description>
+    </field>
+
+    <field>
+      <name>user_login</name>
+      <type>text</type><length>30</length>
+      <notnull>1</notnull>
+      <default></default>
+      <description>User's login</description>
+    </field>
+
+    <field>
+      <name>user_password</name>
+      <type>text</type><length>32</length>
+      <notnull>1</notnull>
+      <default></default>
+      <description>User's password</description>
+    </field>
+
+    <field>
+      <name>user_level</name>
+      <type>integer</type>
+      <notnull>1</notnull>
+      <default>0</default>
+      <description>User's rights level</description>
+    </field>
+
+    <index>
+      <name>user_id_index</name>
+      <unique>1</unique>
+      <field><name>user_id</name></field>
+    </index>
+
+    <index>
+      <name>user_name_index</name>
+      <field><name>user_name</name></field>
+    </index>
+
+    <index>
+      <name>user_login_index</name>
+      <unique>1</unique>
+      <field><name>user_login</name></field>
+    </index>
+
+  </declaration>
+  <initialization>
+
+    <insert>
+    <field><name>user_id</name><value>1</value></field>
+    <field><name>user_name</name><value>Pierre</value></field>
+    <field><name>user_login</name><value>admin</value></field>
+    <field><name>user_password</name><value>43e9a4ab75570f5b</value></field>
+    <field><name>user_level</name><value>10</value></field>
+    </insert>
+
+    <insert>
+    <field><name>user_id</name><value>2</value></field>
+    <field><name>user_name</name><value>Laurent</value></field>
+    <field><name>user_login</name><value>patron</value></field>
+    <field><name>user_password</name><value>54ee44527e8c24f9</value></field>
+    <field><name>user_level</name><value>10</value></field>
+    </insert>
+
+    <insert>
+    <field><name>user_id</name><value>3</value></field>
+    <field><name>user_name</name><value>Laurence</value></field>
+    <field><name>user_login</name><value>chef</value></field>
+    <field><name>user_password</name><value>309e6910634ab429</value></field>
+    <field><name>user_level</name><value>10</value></field>
+    </insert>
+
+  </initialization>
+
+</table>
+
+<table>
+  <name>branch</name>
+  <description>Branch list</description>
+
+  <declaration>
+
+    <field>
+      <name>branch_id</name>
+      <required>true</required>
+      <primarykey>true</primarykey>
+      <type>integer</type>
+      <notnull>1</notnull>
+      <default>0</default>
+      <description>Branch Id</description>
+    </field>
+
+    <field>
+      <name>branch_name</name>
+      <type>text</type><length>30</length>
+      <notnull>1</notnull>
+      <default></default>
+      <description>Branch's name</description>
+    </field>
+
+    <field>
+      <name>branch_status</name>
+      <type>text</type><length>30</length>
+      <notnull>1</notnull>
+      <default></default>
+      <description>Branch's login</description>
+    </field>
+
+    <field>
+      <name>branch_email</name>
+      <type>text</type><length>80</length>
+      <default></default>
+      <description>Branch's email</description>
+    </field>
+
+    <index>
+      <name>branch_id_index</name>
+      <unique>1</unique>
+      <field><name>branch_id</name></field>
+    </index>
+
+    <index>
+      <name>branch_name_index</name>
+      <field><name>branch_name</name></field>
+    </index>
+
+  </declaration>
+  <initialization>
+
+    <insert>
+    <field><name>branch_id</name><value>1</value></field>
+    <field><name>branch_name</name><value>Les torchons déchaînés</value></field>
+    <field><name>branch_email</name><value>dent@les-torchons-dechaines.com</value></field>
+    <field><name>branch_status</name><value>SARL</value></field>
+    </insert>
+
+    <insert>
+    <field><name>branch_id</name><value>2</value></field>
+    <field><name>branch_name</name><value>Trop cool</value></field>
+    <field><name>branch_email</name><value>pas.fou@tropcool.com</value></field>
+    <field><name>branch_status</name><value>SA</value></field>
+    </insert>
+
+  </initialization>
+
+</table>
+
+<table><name>worker</name><description>Worker table</description>
+
+<declaration>
+
+    <field>
+      <name>worker_id</name>
+      <required>true</required>
+      <primarykey>true</primarykey>
+      <type>integer</type>
+      <notnull>1</notnull>
+      <default>0</default>
+      <description>Worker Id</description>
+    </field>
+
+    <field>
+      <name>worker_first_name</name>
+      <type>text</type>
+      <length>40</length>
+      <description>First name</description>
+    </field>
+
+    <field>
+      <name>worker_last_name</name>
+      <type>text</type>
+      <length>40</length>
+      <notnull>1</notnull>
+      <default></default>
+      <description>Last name</description>
+    </field>
+
+    <field>
+      <name>worker_email</name>
+      <type>text</type>
+      <length>60</length>
+      <description>Email address</description>
+    </field>
+
+    <index><name>worker_id_index</name><unique>1</unique>
+      <field><name>worker_id</name></field>
+    </index>
+
+    <index><name>worker_last_name_index</name>
+      <field><name>worker_last_name</name></field>
+    </index>
+
+
+  </declaration><initialization>
+
+    <insert>
+    <field><name>worker_id</name><value>1</value></field>
+    <field><name>worker_first_name</name><value>Laurence</value></field>
+    <field><name>worker_last_name</name><value>Lafeuille</value></field>
+    </insert>
+
+    <insert>
+    <field><name>worker_id</name><value>2</value></field>
+    <field><name>worker_first_name</name><value>Adrien</value></field>
+    <field><name>worker_last_name</name><value>Tournet</value></field>
+    </insert>
+
+    <insert>
+    <field><name>worker_id</name><value>3</value></field>
+    <field><name>worker_first_name</name><value>Mike</value></field>
+    <field><name>worker_last_name</name><value>Garnet</value></field>
+    </insert>
+
+  </initialization>
+</table>
+
+<table><name>contract</name><description>Contract table</description>
+
+<declaration>
+
+    <field>
+      <name>contract_id</name>
+      <required>true</required>
+      <primarykey>true</primarykey>
+      <type>integer</type>
+      <notnull>1</notnull>
+      <default>0</default>
+      <description>Contract Id</description>
+    </field>
+
+    <field>
+      <name>worker_id</name>
+      <required>true</required>
+      <type>integer</type>
+      <notnull>1</notnull>
+      <default>0</default>
+      <description>Worker id</description>
+    </field>
+
+    <field>
+      <name>branch_id</name>
+      <required>true</required>
+      <type>integer</type>
+      <notnull>1</notnull>
+      <default>0</default>
+      <description>Branch id</description>
+    </field>
+
+    <field>
+      <name>wage</name>
+      <type>integer</type>
+      <default>0</default>
+      <description>Contract wage</description>
+    </field>
+
+    <field>
+      <name>begin_date</name>
+      <type>timestamp</type>
+      <description>Begin of the contract</description>
+    </field>
+
+    <field>
+      <name>end_date</name>
+      <type>timestamp</type>
+      <description>End of the contract</description>
+    </field>
+
+    <index><name>contract_id_index</name><unique>1</unique>
+      <field><name>contract_id</name></field>
+    </index>
+
+  </declaration><initialization>
+
+    <insert>
+    <field><name>contract_id</name><value>1</value></field>
+    <field><name>worker_id</name><value>1</value></field>
+    <field><name>branch_id</name><value>1</value></field>
+    <field><name>wage</name><value>1000</value></field>
+    <field><name>begin_date</name><value>2004-01-01 00:00:00</value></field>
+    </insert>
+
+    <insert>
+    <field><name>contract_id</name><value>2</value></field>
+    <field><name>worker_id</name><value>2</value></field>
+    <field><name>branch_id</name><value>1</value></field>
+    <field><name>wage</name><value>2000</value></field>
+    <field><name>begin_date</name><value>2003-02-01 00:00:00</value></field>
+    </insert>
+
+    <insert>
+    <field><name>contract_id</name><value>3</value></field>
+    <field><name>worker_id</name><value>3</value></field>
+    <field><name>branch_id</name><value>2</value></field>
+    <field><name>wage</name><value>3000</value></field>
+    <field><name>begin_date</name><value>2002-12-31 00:00:00</value></field>
+    </insert>
+
+  </initialization>
+</table>
+
+<sequence>
+  <name>user_id</name>
+  <start>4</start>
+</sequence>
+
+<sequence>
+  <name>branch_id</name>
+  <start>3</start>
+</sequence>
+
+<sequence><name>worker_id</name>
+  <start>4</start>
+</sequence>
+
+<sequence><name>contract_id</name>
+  <start>4</start>
+</sequence>
+
+</database>

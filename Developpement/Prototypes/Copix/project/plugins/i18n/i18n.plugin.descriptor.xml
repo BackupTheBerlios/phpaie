@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<plugin name="i18n">
+   <version major="" minor="" status="" copixversion=""  date="" />
+   <authors>
+      <author name="Jouanneau Laurent" email="ljouanneau@aston.fr" website="http://ljouanneau.com" role="author" />
+      <author name="Gerald Croes" email="gcroes@aston.fr" website="http://www.phpside.org" role="contributor" />
+   </authors>
+   <description>A plugin to detect automatically the lang of a user</description>
+   <infos />
+</plugin>

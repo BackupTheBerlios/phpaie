@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<daodefinition>
+
+<general>
+<table name="branch" />
+</general>
+
+<fields>
+
+    <field name="branch_id" required="yes" PK="true" type="int" notnull="yes" default="0" caption="Branch Id"/>
+
+    <field name="branch_name" type="string" maxlength="30" notnull="yes" default="" caption="Branch's name"/>
+
+    <field name="branch_status" type="string" maxlength="30" notnull="yes" default="" caption="Branch's login"/>
+
+    <field name="branch_email" type="string" maxlength="80" default="" caption="Branch's email"/>
+
+</fields>
+
+<general>
+<table name="worker" />
+</general>
+
+<fields>
+
+    <field name="worker_id" required="yes" PK="true" type="int" notnull="yes" default="0" caption="Worker Id"/>
+
+    <field name="worker_first_name" type="string" maxlength="40" caption="First name"/>
+
+    <field name="worker_last_name" type="string" maxlength="40" notnull="yes" default="" caption="Last name"/>
+
+    <field name="worker_email" type="string" maxlength="60" caption="Email address"/>
+  
+</fields>
+
+<general>
+<table name="contract" />
+</general>
+
+<fields>
+
+    <field name="contract_id" required="yes" PK="true" type="int" notnull="yes" default="0" caption="Contract Id"/>
+
+    <field name="worker_id" required="yes" type="int" notnull="yes" default="0" caption="Worker id"/>
+
+    <field name="branch_id" required="yes" type="int" notnull="yes" default="0" caption="Branch id"/>
+
+    <field name="wage" type="int" default="0" caption="Contract wage"/>
+
+    <field name="begin_date" type="timestamp" caption="Begin of the contract"/>
+
+    <field name="end_date" type="timestamp" caption="End of the contract"/>
+
+</fields>
+
+<sequence>
+  <name>user_id</name>
+  <start>4</start>
+</sequence>
+
+<sequence>
+  <name>branch_id</name>
+  <start>3</start>
+</sequence>
+
+<sequence><name>worker_id</name>
+  <start>4</start>
+</sequence>
+
+<sequence><name>contract_id</name>
+  <start>4</start>
+</sequence>
+
+</daodefinition>

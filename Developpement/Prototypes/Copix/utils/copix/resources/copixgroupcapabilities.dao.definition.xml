@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<daodefinition version="1.0">
+
+ <datasource>
+   <tables>
+      <table name="grpcap" tablename="CopixGroupCapabilities" primary="yes" />
+      <table name="cap" tablename="CopixCapability" />
+   </tables>
+ </datasource>
+
+ <properties>
+  <property name="id_cgrp"
+         captioni18n="copix:profile.dao.CopixGroupCapabilities.id_cgrp"
+         pk="true"
+         required="yes"
+         type="numeric"
+         />
+
+  <property name="name_ccpb"
+         captioni18n="copix:profile.dao.CopixGroupCapabilities.name_ccpb"
+         type="varchar"
+         maxlength="50"
+         required="yes"
+         fkTable="cap"
+         fkfieldname="name_ccpb"
+         />
+
+  <property name="value_cgcp"
+         captioni18n="copix:profile.dao.CopixGroupCapabilities.value_cgcp"
+         type="int"
+         required="yes"
+         />
+   <property name="description_ccpb" table="cap"
+      type="varchar"
+   />
+
+ </properties>
+</daodefinition>

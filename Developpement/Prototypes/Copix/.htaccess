@@ -1,0 +1,3 @@
+php_flag register_globals off
+php_flag short_open_tag off
+#
