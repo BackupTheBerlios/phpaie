@@ -44,10 +44,8 @@ var $headerBuffer	= array("<br>",
 "est dispo <a href=\"liveuser3login.php\">ici</a>.<br>",
 "(LiveUser3.php est une version en test).</p>",
 "<hr>",
-"<p>&nbsp;Une version LiveUser (Db_complex )",
-"est dispo <a href=\"../UserAuth/news_new.php\">ici</a>.<br>",
-"(LiveUser4.php est une version en test).</p>",
-"<hr>",
+"<p>&nbsp;",
+"</p>",
 "<p></p>",
 );
 // ---------- buffer a afficher après le formulaire Quickform------

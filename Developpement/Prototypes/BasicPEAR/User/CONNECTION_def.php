@@ -73,7 +73,7 @@ return array (
 	'field_quoted'	=>	0,
 	'field_match'	=>	"")
 // @@@@FK_SET_INPUTS_INSERT_BEGINS_HERE@@@@
-// _INP_INSERTED ID_INSCRIPTION (Mon Mar 15 14:17:06 2004 SETFKEYS)
+// _INP_INSERTED ID_INSCRIPTION (Sat May 15 11:48:11 2004 SETFKEYS)
 	,
 	'ID_INSCRIPTION' => array (
 	'field_name'	=>	"ID_INSCRIPTION",
@@ -170,7 +170,7 @@ $page->addBodyContent("    </tbody>\n");
 $page->addBodyContent("  </table>\n");
 $page->addBodyContent("  <p align=\"center\">\n");
 $page->addBodyContent("  <input type=\"submit\" value=\"Envoyer\" name=\"B1\" /></p>\n");
-// _INP_INSERTED ID_INSCRIPTION  ( Mon Mar 15 14:17:06 2004 SETFKEYS)
+// _INP_INSERTED ID_INSCRIPTION  ( Sat May 15 11:48:11 2004 SETFKEYS)
 //* @@@@FK_SET_VARS_INSERT_BEGINS_HERE@@@@
 //Insertion automatique du paramètre ID_INSCRIPTION 
 print "<input type=\"hidden\" name=\"ID_INSCRIPTION\" value=\"$vars[ID_INSCRIPTION]\" size=\"11\">\n";
@@ -228,7 +228,7 @@ if ( isset($vars['CONNECTION_HOUR_DATE']) && $vars['CONNECTION_HOUR_DATE']) {
 	}
 // Pas de rule test défini pour CONNECTION_HOUR_DATE
 // @@@@FK_SET_QFVARS_INSERT_BEGINS_HERE@@@@
-// _INP_INSERTED ID_INSCRIPTION (Mon Mar 15 14:17:06 2004 SETFKEYS)
+// _INP_INSERTED ID_INSCRIPTION (Sat May 15 11:48:11 2004 SETFKEYS)
 	$form->_submitValues ['ID_INSCRIPTION'] = $vars['ID_INSCRIPTION'];
 	$form->addElement('hidden', 'ID_INSCRIPTION');
 // @@@@FK_SET_QFVARS_INSERT_ENDS_HERE@@@@

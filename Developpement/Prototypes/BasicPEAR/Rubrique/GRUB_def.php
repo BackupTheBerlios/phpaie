@@ -72,7 +72,7 @@ return array (
 	'field_quoted'	=>	0,
 	'field_match'	=>	"")
 // @@@@FK_SET_INPUTS_INSERT_BEGINS_HERE@@@@
-// _INP_INSERTED ID_EMPLOY (Mon Mar 15 14:17:13 2004 SETFKEYS)
+// _INP_INSERTED ID_EMPLOY (Sat May 15 11:48:19 2004 SETFKEYS)
 	,
 	'ID_EMPLOY' => array (
 	'field_name'	=>	"ID_EMPLOY",
@@ -189,7 +189,7 @@ $page->addBodyContent("  <p align=\"center\"> \n");
 $page->addBodyContent(( TRUE && isset ($vars['S_ID_I']) && isset ($vars['ID_EMPLOY1']) && isset ($vars['ID_ORGANCO'])) ? "<a href=\"grub.php?ID_GRUB=$vars[S_ID_I]&ID_EMPLOY1=$vars[ID_EMPLOY1]&ID_ORGANCO=$vars[ID_ORGANCO]\">Périodes de versement</a> -\n" : "<font color=\"#C0C0C0\">Périodes de versement - </font>\n");
 $page->addBodyContent(( TRUE && isset ($vars['S_ID_I']) && isset ($vars['ID_EMPLOY1']) && isset ($vars['ID_ORGANCO'])) ? " <a href=\"rubgrub.php?ID_GRUB=$vars[S_ID_I]&ID_EMPLOY1=$vars[ID_EMPLOY1]&ID_ORGANCO=$vars[ID_ORGANCO]\">Rubriques affectées</a>  \n" : "<font color=\"#C0C0C0\"> Rubriques affectées   </font>\n");
 $page->addBodyContent("</p>\n");
-// _INP_INSERTED ID_EMPLOY  ( Mon Mar 15 14:17:13 2004 SETFKEYS)
+// _INP_INSERTED ID_EMPLOY  ( Sat May 15 11:48:19 2004 SETFKEYS)
 //* @@@@FK_SET_VARS_INSERT_BEGINS_HERE@@@@
 //Insertion automatique du paramètre ID_EMPLOY 
 print "<input type=\"hidden\" name=\"ID_EMPLOY\" value=\"$vars[ID_EMPLOY]\" size=\"11\">\n";
@@ -252,7 +252,7 @@ if ( TRUE && isset ($vars['S_ID_I']) && isset ($vars['ID_EMPLOY1']) && isset ($v
 	 $link_1 = &HTML_QuickForm::createElement('static',  'RUBRIQUES_AFFECTéES',  "", "[Rubriques affectées]");
  }
 // @@@@FK_SET_QFVARS_INSERT_BEGINS_HERE@@@@
-// _INP_INSERTED ID_EMPLOY (Mon Mar 15 14:17:13 2004 SETFKEYS)
+// _INP_INSERTED ID_EMPLOY (Sat May 15 11:48:19 2004 SETFKEYS)
 	$form->_submitValues ['ID_EMPLOY'] = $vars['ID_EMPLOY'];
 	$form->addElement('hidden', 'ID_EMPLOY');
 // @@@@FK_SET_QFVARS_INSERT_ENDS_HERE@@@@

@@ -5,20 +5,22 @@
 // print getEnv('DOCUMENT_ROOT');  
 // exit (0);
 //  require_once getEnv('DOCUMENT_ROOT') . '/main.inc.php';
+// print ">".__FILE__.":".__LINE__."< <br>";
   require_once 'main.inc.php';
 //`echo PASSE news_new require_once main after >> test.txt`;
 
 // print ">".__FILE__.":".__LINE__."< <br>";
   // If the user hasn't the right to write news -> access denied.
   if (!$LU->checkRight(RIGHT_NEWS_NEW)) {
+// print ">".__FILE__.":".__LINE__."< <br>";
       $tpl->loadTemplatefile('news_notallowed.tpl.php');
 //      include_once WEB_ROOT . '/finish.inc.php';
       include_once 'finish.inc.php';
      exit();
   }
 
-// print ">".__FILE__.":".__LINE__."< <br>";
-  $tpl->loadTemplatefile(WEB_ROOT . '/news_new.tpl.php');
+ print ">".__FILE__.":".__LINE__."< <br>";
+  $tpl->loadTemplatefile('news_new.tpl.php');
 
   // Read form data.
   $news     = isset($_POST['news'])     ? $_POST['news'] : '';

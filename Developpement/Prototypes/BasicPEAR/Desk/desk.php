@@ -18,7 +18,6 @@
 <?php 
 //Insertion des fichiers de contrôle de session [par défaut]
 require_once("DESK_def.php");
-require_once("../inc/session_identifie.php");
 //Création de l'objet page par défaut
 $pg_DESK = new DESK( ( isset( $_POST ) && array_count_values($_POST) ) ? $_POST : $_GET );
 // Affichage de la présentation
@@ -98,7 +97,7 @@ print  MAIN_CLASS::fetchOne("INSCRIPTION, CONNECTION", "INSCRIPTION.INSCRIPTION_
       <td width="400" height="150" valign="middle" align="center"> </td>
       <td width="200" height="150" valign="middle" align="center">
       <p align="center">machinbipaye<br/>
-<?php echo '<font size ="-1">V 0.1<BR/>(Lun 15 Mar 2004 15:15:13)</font>';?>
+<?php echo '<font size ="-1">V 0.1<BR/>(Sam 15 Mai 2004 15:35:28)</font>';?>
         </p>
       </td>
     </tr>

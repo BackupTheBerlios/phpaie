@@ -1,9 +1,13 @@
 <?php
 
+	define('LIVEUSER_AUTH_IDLED',       -1);
+	define('LIVEUSER_AUTH_EXPIRED',     -2);
+	define('LIVEUSER_AUTH_WRONG_LOGIN', -3);
+	define('LIVEUSER_AUTH_ISINACTIVE',  -4);
   define('HTTP_HOST', 'localhost');
 //  define('HTTP_HOST', getenv('HTTP_HOST'));
  // define('WEB_ROOT', getenv('DOCUMENT_ROOT').'/~PHPAIE');
-  define('WEB_ROOT', '/home/PHPAIE/www');
+//  define('WEB_ROOT', '/home/PHPAIE/www');
   define('EMAIL_WEBMASTER', 'krausbn@php.net');
 
   // PEAR path
@@ -17,7 +21,7 @@
   {
       include_once 'HTML/Template/IT.php';
       $tpl = new HTML_Template_IT();
-      $tpl->loadTemplatefile(WEB_ROOT . '/error-page.tpl.php');
+      $tpl->loadTemplatefile('error-page.tpl.php');
 
       $tpl->setVariable('error_msg', "<b>$errfile ($errline)</b><br>$errstr");
 
@@ -38,7 +42,7 @@
 
   function showLoginForm($liveUserObj = false)
   {
-// print ">".__FILE__.":".__LINE__."< <br>";
+ // print ">".__FILE__.":".__LINE__."< <br>";
       include_once 'HTML/Template/IT.php';
       $tpl = new HTML_Template_IT();
      // $tpl->loadTemplatefile(WEB_ROOT . '/loginform.tpl.php');
@@ -82,9 +86,9 @@
 
   $myDB = array('localhost' => array('host' => 'localhost',
                                      'type' => 'mysql',
-                                     'name' => 'yourBase',
-                                     'user' => 'PHPAIE',
-                                     'pwd'  => 'Passwd')
+                                     'name' => 'PHPAIE',
+                                     'user' => 'phpaie',
+                                     'pwd'  => 'tdobijor')
                );
 
 

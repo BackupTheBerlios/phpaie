@@ -43,7 +43,7 @@ array (
 		'nbArgsRule' => 0
 		)
 // @@@@FK_SET_INITFORM_INSERT_BEGINS_HERE@@@@
-// _INP_INSERTED ID_GRUB (Mon Mar 15 14:17:28 2004 SETFKEYS)
+// _INP_INSERTED ID_GRUB (Sat May 15 11:48:33 2004 SETFKEYS)
 ,
 array (
 			'name' => 'ID_GRUB',
@@ -52,7 +52,7 @@ array (
 			),
 		'nbArgsRule' => 0
 		)
-// _INP_INSERTED ID_RUBR (Mon Mar 15 14:17:25 2004 SETFKEYS)
+// _INP_INSERTED ID_RUBR (Sat May 15 11:48:30 2004 SETFKEYS)
 ,
 array (
 			'name' => 'ID_RUBR',
@@ -61,7 +61,7 @@ array (
 			),
 		'nbArgsRule' => 0
 		)
-// _INP_INSERTED ID_EMPLOY (Mon Mar 15 14:17:21 2004 SETFKEYS)
+// _INP_INSERTED ID_EMPLOY (Sat May 15 11:48:26 2004 SETFKEYS)
 ,
 array (
 			'name' => 'ID_EMPLOY',
@@ -80,12 +80,12 @@ array (
 			),
 		'Paires'=> array('ID_GRUB' => 'S_ID_I','ID_EMPLOY1' => 'ID_EMPLOY1',
 // @@@@FK_SET_INITFORM_LINK_INSERT_BEGINS_HERE@@@@
-// _INP_INSERTED ID_GRUB (Mon Mar 15 14:17:28 2004 SETFKEYS)
+// _INP_INSERTED ID_GRUB (Sat May 15 11:48:33 2004 SETFKEYS)
 
 			'ID_GRUB' => 'ID_GRUB',
-		// _INP_INSERTED ID_RUBR (Mon Mar 15 14:17:25 2004 SETFKEYS)
+		// _INP_INSERTED ID_RUBR (Sat May 15 11:48:30 2004 SETFKEYS)
 			'ID_RUBR' => 'ID_RUBR',
-		// _INP_INSERTED ID_EMPLOY (Mon Mar 15 14:17:21 2004 SETFKEYS)
+		// _INP_INSERTED ID_EMPLOY (Sat May 15 11:48:26 2004 SETFKEYS)
 			'ID_EMPLOY' => 'ID_EMPLOY',
 		// @@@@FK_SET_INITFORM_LINK_INSERT_ENDS_HERE@@@@
 			)

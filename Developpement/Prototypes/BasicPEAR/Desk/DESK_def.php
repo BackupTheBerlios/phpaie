@@ -221,7 +221,7 @@ $page->addBodyContent("    <tr>\n");
 $page->addBodyContent("      <td width=\"400\" height=\"150\" valign=\"middle\" align=\"center\"> </td>\n");
 $page->addBodyContent("      <td width=\"200\" height=\"150\" valign=\"middle\" align=\"center\">\n");
 $page->addBodyContent("      <p align=\"center\">machinbipaye<br/>\n");
-$page->addBodyContent('<font size ="-1">V 0.1<BR/>(Lun 15 Mar 2004 15:15:18)</font>');
+$page->addBodyContent('<font size ="-1">V 0.1<BR/>(Sam 15 Mai 2004 13:46:30)</font>');
 $page->addBodyContent("        </p>\n");
 $page->addBodyContent("      </td>\n");
 $page->addBodyContent("    </tr>\n");

@@ -15,7 +15,7 @@
 // published by the Free Software Foundation.
 //*********************************************************************
 <?php
-// $Id: NAV_InitForm.php,v 1.1 2004/03/17 11:33:53 j-charles Exp $
+// $Id: NAV_InitForm.php,v 1.2 2004/07/20 21:33:14 j-charles Exp $
     require_once 'conf3.php';
     require_once 'DB/DB.php';
     $dbc = DB::connect($liveuserConfig['permContainer']['dsn'], TRUE);

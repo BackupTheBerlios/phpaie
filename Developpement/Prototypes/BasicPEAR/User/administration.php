@@ -10,7 +10,7 @@
  *
  * This example is intended to be used with the DB_Medium Perm driver.
  *
- * @version $Id: administration.php,v 1.1 2004/03/17 11:33:53 j-charles Exp $
+ * @version $Id: administration.php,v 1.2 2004/07/20 21:33:14 j-charles Exp $
  **/
 error_reporting(E_ALL);
 
@@ -29,11 +29,12 @@ PEAR::setErrorHandling(PEAR_ERROR_CALLBACK, 'eHandler');
 
 function eHandler($errObj)
 {
-    echo('<hr><font color=red>'.$errObj->getMessage().':<br>'.$errObj->getUserinfo().'</font><hr>');
+//    echo('<hr><font color=red>'.$errObj->getMessage().':<br>'.$errObj->getUserinfo().'</font><hr>');
 }
 
 // Create new LoginManager object
 $LU = LiveUser::factory($liveuserConfig);
+
 ?>
 <html>
 <head>

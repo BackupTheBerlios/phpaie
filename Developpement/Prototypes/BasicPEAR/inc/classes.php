@@ -14,7 +14,7 @@
 // it under the terms of the GNU Lesser General Public License as 
 // published by the Free Software Foundation.
 //*********************************************************************
-// Généré le Mon Mar 15 14:14:58 2004 par do_include
+// Généré le Sat May 15 13:32:15 2004 par do_include
 // Classe nécessaire à l'affichage des tableaux
 class Attributs {
 var $id;

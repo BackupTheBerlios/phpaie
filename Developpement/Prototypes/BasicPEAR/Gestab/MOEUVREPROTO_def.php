@@ -91,7 +91,7 @@ return array (
 	'field_quoted'	=>	0,
 	'field_match'	=>	"")
 // @@@@FK_SET_INPUTS_INSERT_BEGINS_HERE@@@@
-// _INP_INSERTED ATAB_NOMTBL_CKEY_VCH (Mon Mar 15 14:17:03 2004 SETFKEYS)
+// _INP_INSERTED ATAB_NOMTBL_CKEY_VCH (Sat May 15 11:48:08 2004 SETFKEYS)
 	,
 	'ATAB_NOMTBL_CKEY_VCH' => array (
 	'field_name'	=>	"ATAB_NOMTBL_CKEY_VCH",
@@ -189,7 +189,7 @@ $page->addBodyContent("  <p align=\"center\">\n");
 $page->addBodyContent("  	<input type=\"submit\" value=\"Envoyer\" name=\"B1\">\n");
 $page->addBodyContent("  	<input type=\"reset\" value=\"Retablir\" name=\"B2\">\n");
 $page->addBodyContent("  </p>\n");
-// _INP_INSERTED ATAB_NOMTBL_CKEY_VCH  ( Mon Mar 15 14:17:03 2004 SETFKEYS)
+// _INP_INSERTED ATAB_NOMTBL_CKEY_VCH  ( Sat May 15 11:48:08 2004 SETFKEYS)
 //* @@@@FK_SET_VARS_INSERT_BEGINS_HERE@@@@
 //Insertion automatique du paramètre ATAB_NOMTBL_CKEY_VCH 
 print "<input type=\"hidden\" name=\"ATAB_NOMTBL_CKEY_VCH\" value=\"$vars[ATAB_NOMTBL_CKEY_VCH]\" size=\"61\">\n";
@@ -257,7 +257,7 @@ if ( isset($vars['MOEUVREPROTO_NODENUM_CKEY_I']) && $vars['MOEUVREPROTO_NODENUM_
 	}
 // Pas de rule test défini pour MOEUVREPROTO_NODENUM_CKEY_I
 // @@@@FK_SET_QFVARS_INSERT_BEGINS_HERE@@@@
-// _INP_INSERTED ATAB_NOMTBL_CKEY_VCH (Mon Mar 15 14:17:03 2004 SETFKEYS)
+// _INP_INSERTED ATAB_NOMTBL_CKEY_VCH (Sat May 15 11:48:08 2004 SETFKEYS)
 	$form->_submitValues ['ATAB_NOMTBL_CKEY_VCH'] = $vars['ATAB_NOMTBL_CKEY_VCH'];
 	$form->addElement('hidden', 'ATAB_NOMTBL_CKEY_VCH');
 // @@@@FK_SET_QFVARS_INSERT_ENDS_HERE@@@@

@@ -235,7 +235,7 @@ return array (
 	'field_quoted'	=>	0,
 	'field_match'	=>	"")
 // @@@@FK_SET_INPUTS_INSERT_BEGINS_HERE@@@@
-// _INP_INSERTED ID_EMPLOY (Mon Mar 15 14:17:17 2004 SETFKEYS)
+// _INP_INSERTED ID_EMPLOY (Sat May 15 11:48:22 2004 SETFKEYS)
 	,
 	'ID_EMPLOY' => array (
 	'field_name'	=>	"ID_EMPLOY",
@@ -498,7 +498,7 @@ $page->addBodyContent(( TRUE && isset ($vars['ID_EMPLOY1'])) ? "<a href=\"../For
 $page->addBodyContent("<br>\n");
 $page->addBodyContent("Les renseignements inscrits en <strong>gras</strong>  sont obligatoires pour une bonne fonction du service. Les champs optionnels sont\n");
 $page->addBodyContent("n&eacute;cessaires lorsqu' ils rentrent dans la composition d'un calcul (voir rubriques et formules).</p>\n");
-// _INP_INSERTED ID_EMPLOY  ( Mon Mar 15 14:17:17 2004 SETFKEYS)
+// _INP_INSERTED ID_EMPLOY  ( Sat May 15 11:48:22 2004 SETFKEYS)
 //* @@@@FK_SET_VARS_INSERT_BEGINS_HERE@@@@
 //Insertion automatique du paramètre ID_EMPLOY 
 print "<input type=\"hidden\" name=\"ID_EMPLOY\" value=\"$vars[ID_EMPLOY]\" size=\"11\">\n";
@@ -702,7 +702,7 @@ if ( TRUE && isset ($vars['ID_EMPLOY1'])) {
 	 $link_10 = &HTML_QuickForm::createElement('static',  '&EACUTE;L&EACUTE;MENTS_DE_CALCUL',  "", "[&Eacute;l&eacute;ments de calcul]");
  }
 // @@@@FK_SET_QFVARS_INSERT_BEGINS_HERE@@@@
-// _INP_INSERTED ID_EMPLOY (Mon Mar 15 14:17:17 2004 SETFKEYS)
+// _INP_INSERTED ID_EMPLOY (Sat May 15 11:48:22 2004 SETFKEYS)
 	$form->_submitValues ['ID_EMPLOY'] = $vars['ID_EMPLOY'];
 	$form->addElement('hidden', 'ID_EMPLOY');
 // @@@@FK_SET_QFVARS_INSERT_ENDS_HERE@@@@

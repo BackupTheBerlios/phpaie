@@ -15,7 +15,7 @@
 // published by the Free Software Foundation.
 //*********************************************************************
 //--------------classe chklist-------------
-// Généré le Mon Mar 15 14:14:58 2004 par do_include
+// Généré le Sat May 15 13:32:15 2004 par do_include
 // Classe type container chklist
 // Prend les variables postée par le formulaire
 // et en extrait les inputs checkbox d'une liste

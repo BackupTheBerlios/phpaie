@@ -132,7 +132,7 @@ if (($ret_ba = $this->businessAction()) != 0) {
 	return $ret_ba;
 	}
 
-// $Id: NAV_def.php,v 1.1 2004/03/17 11:33:53 j-charles Exp $
+// $Id: NAV_def.php,v 1.2 2004/07/20 21:33:14 j-charles Exp $
     require_once 'conf3.php';
     require_once 'DB/DB.php';
     $dbc = DB::connect($liveuserConfig['permContainer']['dsn'], TRUE);
@@ -216,7 +216,7 @@ if (!empty($this->headerBuffer)) {
 $page->setTitle('Phpaie (NAV)');
 $page->addStyleSheet($css_style);
 InitForm( $page, $this, $formDef, $action );
-// $Id: NAV_def.php,v 1.1 2004/03/17 11:33:53 j-charles Exp $
+// $Id: NAV_def.php,v 1.2 2004/07/20 21:33:14 j-charles Exp $
     require_once 'conf3.php';
     require_once 'DB/DB.php';
     $dbc = DB::connect($liveuserConfig['permContainer']['dsn'], TRUE);

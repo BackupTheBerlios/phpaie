@@ -23,7 +23,7 @@ print <input type=\"password\" name=\"passwd\" size=\"15\" maxlength=\"15\" styl
 ?>
 
 <?php 
-// $id_name = $this->getIdName(); //HTMSET.pl 498
+// $id_name = $this->getIdName(); //htmset.pl 498
 print "<input type=\"hidden\" name=\"RETURN_STATUS\" VALUE=\"" .(isset($vars['RETURN_STATUS'])  ? $vars['RETURN_STATUS'] : "") ."\">\n";
 print "<input  type=\"hidden\" name=\"$id_name\" readonly=\"readonly\" VALUE=\"" .(isset($vars[$id_name])  ? $vars[$id_name] : "") ."\">\n";
 ?> 

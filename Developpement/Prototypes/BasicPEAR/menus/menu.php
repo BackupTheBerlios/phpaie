@@ -10,6 +10,8 @@
 // Modification 21/10/02 Correction du passage de paramètres 
 // Modification 19/05/03 paramètre chemin des images
 // Modification 19/05/03 paramètre nom de l'URL par défaut'
+// Modification 28/03/04 suppression des doublons lors d'ajout automatique PHPSESSID (pas vraiment réglé)
+// Modification 28/03/04 
 
 //définition des constantes -> nom des fichiers icône
 define("TEE_MINUS_IMG", 		"tee_m_1818.gif");
@@ -24,9 +26,10 @@ define("FOLDER_DEF_IMG", 		"folder_1818.gif");
 //chemin du répertoire des icônes
 define("PATH_IMG", 				"../menus/images");
 //chaîne format du tag IMG
-define("TAG_IMG", "<IMG src=\"%s/%s\" align=\"left\" border=\"0\" vspace=\"0\" hspace=\"0\">\n");
+define("TAG_IMG", "<IMG src=\"%s/%s\" align=\"left\" border=\"0\" vspace=\"0\" hspace=\"0\"/>\n");
 //chaîne format du tag HREF
-define("TAG_HREF", "<A HREF=\"%s?MENU=%s,%s%s\" target=\"_self\">\n");
+define("TAG_HREF", "<A class=\"menuLink\" HREF=\"%s?MENU=%s,%s%s\" target=\"_self\">\n");
+define("TAG_SIMPLE_HREF", 	"&nbsp;<A class=\"menuLink\" HREF=\"");
 
 class menu {
 //$level : niveau de profondeur par rapport à la racine
@@ -149,7 +152,7 @@ class menu {
             } 
         } 
 
-//  function Arbo_print($object)
+// function Arbo_print($object)
 // fonction d'affichage. Elle a besoin de l'objet passé en argument pour afficher son contenu et effectuer un appel récursif
 // sur tout ses noeuds fils. Le Noeud n'est affiché que s'il est dans l'état visible. (C'est ici qu'il faut ajouter de jolis icônes
 // pour montrer les types de fichiers par exemple).
@@ -158,15 +161,24 @@ class menu {
         {
             $What_isn_visible = array();
             $remain_query = "";
+// Supprimer les doublons de la query string (PHP_SESSION_ID)
+// Peu efficace mais ceci limite les dégats.
+            $own_query = implode("&", array_unique (explode("&", $GLOBALS["QUERY_STRING"])));
+// Détecter la présence de paramètre dans la requête           
+            if (strchr ( $object -> url, "?")) {
+            	$is_there_QS = TRUE;
+                $object -> url = substr($object -> url, strpos( $object -> url, "?")+1, strlen($object -> url));
+                print "<H2>".$object -> url."</H2>";
+            }
 
             if (isset ($GLOBALS["MENU"]) && $GLOBALS["MENU"]) {
                 $What_isn_visible = explode(",", $GLOBALS["MENU"]);
             } 
-            
-            if ( ereg( "MENU=[^&]*(.*)",$GLOBALS["QUERY_STRING"], $regs ) ) {
+
+            if ( ereg( "MENU=[^&]*(.*)",$own_query , $regs ) ) {
                  $remain_query =  $regs[1] ;            
-            } else if ($GLOBALS["QUERY_STRING"]) {
-                 $remain_query =  "&".$GLOBALS["QUERY_STRING"];
+            } else if ( $own_query ) {
+                 $remain_query =  "&".$own_query;
             }
             
             print "<TR valign=\"top\"><TD nowrap>";
@@ -213,11 +225,10 @@ class menu {
 
             if ($object -> havechild || $object -> ident == -1) {
                 printf(TAG_IMG, PATH_IMG, FOLDER_DEF_IMG);
-//                print "&nbsp;$object->name \n";
-                print "&nbsp;<A HREF=\"" . $object -> url."?".$GLOBALS["QUERY_STRING"]. "\">$object->name</A>\n";
+                print TAG_SIMPLE_HREF . $object -> url.($is_there_QS ? '&': '?').$own_query . "\">$object->name</A>\n";
             } else {
-                printf(TAG_IMG, PATH_IMG, trim($object -> identchild[0]) );
-                print "&nbsp;<A HREF=\"" . $object -> url."?".$GLOBALS["QUERY_STRING"]. "\">$object->name</A>\n";
+                printf(TAG_IMG, PATH_IMG, trim($object -> identchild[0]));
+                print TAG_SIMPLE_HREF . $object -> url.($is_there_QS ? '&': '?').$own_query . "\">$object->name</A>\n";
             } 
             print "</font>\n";
             print "</TD></TR>";
@@ -248,11 +259,12 @@ class menu {
             $new_num = 1;
 	    // suppression  retour et newline de la ligne a parser
 	    	$arbo_string = str_replace(array("\r\n", "\r", "\n", "\t"), array("", "", "", ""), $arbo_string);
+        // Le parsing est récursif (non itératif).
 	    // tant qu'une branche ou un noeud est détecté dans la ligne ...
-        // Note: le parsing est récursif et non itératif.
             while (eregi('\(([^\(|^\)]+)\)', $arbo_string, $accepted)) {
-	    // suppresion des parenthèses et numérotation du noeud
-                $arbo_string = ereg_replace("\(" . $accepted[0] . "\)", "$new_num", $arbo_string);
+	    // suppresion des parenthèses et numérotation du noeud et protection de '?' (separateur d'argument)
+	    // preg_quote ne marche pas (?)
+                $arbo_string = str_replace("\x01", "?", ereg_replace("\(" .  str_replace("?", "\x01", $accepted[0]) . "\)", "$new_num", str_replace("?", "\x01",  $arbo_string)));
 		// récupération des attributs
                 $locales = explode(",", $accepted[1]);
 		// génération du noeud 

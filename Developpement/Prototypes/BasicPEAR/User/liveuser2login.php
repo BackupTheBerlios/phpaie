@@ -82,7 +82,7 @@ if (!$LU->isLoggedIn()) {
     echo '</table>';
 } else {
     // Okay, he's in. Let's display a cross table with his rights.
-    echo '<h2 align="center">User logged in: '.$LU->getHandle().'</h2>';
+    echo '<h2 align="center">User logged in: '.$LU->getProperty('handle').'</h2>';
     echo "<p>You can see user's rights in the table.</p>";
 
     echo '<table border="1" align="center">';
@@ -193,10 +193,10 @@ print_r($_POST);
 echo '</pre>';
 
 echo '<br>Handle:';
-print_r($LU->getHandle());
+print_r($LU->getProperty('handle'));
 echo '<br>User Type:';
 print_r($LU->getProperty('userType'));
 
-?>
+
 
 ?>

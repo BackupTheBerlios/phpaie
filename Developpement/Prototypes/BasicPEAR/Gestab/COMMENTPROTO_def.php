@@ -73,7 +73,7 @@ return array (
 	'field_quoted'	=>	0,
 	'field_match'	=>	"")
 // @@@@FK_SET_INPUTS_INSERT_BEGINS_HERE@@@@
-// _INP_INSERTED ATAB_NOMTBL_CKEY_VCH (Mon Mar 15 14:16:59 2004 SETFKEYS)
+// _INP_INSERTED ATAB_NOMTBL_CKEY_VCH (Sat May 15 11:48:04 2004 SETFKEYS)
 	,
 	'ATAB_NOMTBL_CKEY_VCH' => array (
 	'field_name'	=>	"ATAB_NOMTBL_CKEY_VCH",
@@ -170,7 +170,7 @@ $page->addBodyContent("  <p align=\"center\">\n");
 $page->addBodyContent("  <input type=\"submit\" value=\"Envoyer\" name=\"B1\">\n");
 $page->addBodyContent("  <input type=\"submit\" value=\"Nouveau\" name=\"B_NOUVEAU\"></p>\n");
 $page->addBodyContent(( TRUE) ? "<a href=\"Javascript:history.go(-1)?\">Retour</a>\n" : "<font color=\"#C0C0C0\">Retour </font>\n");
-// _INP_INSERTED ATAB_NOMTBL_CKEY_VCH  ( Mon Mar 15 14:16:59 2004 SETFKEYS)
+// _INP_INSERTED ATAB_NOMTBL_CKEY_VCH  ( Sat May 15 11:48:04 2004 SETFKEYS)
 //* @@@@FK_SET_VARS_INSERT_BEGINS_HERE@@@@
 //Insertion automatique du paramètre ATAB_NOMTBL_CKEY_VCH 
 print "<input type=\"hidden\" name=\"ATAB_NOMTBL_CKEY_VCH\" value=\"$vars[ATAB_NOMTBL_CKEY_VCH]\" size=\"61\">\n";
@@ -241,7 +241,7 @@ if ( TRUE) {
 	 $link_0 = &HTML_QuickForm::createElement('static',  'RETOUR',  "", "[Retour]");
  }
 // @@@@FK_SET_QFVARS_INSERT_BEGINS_HERE@@@@
-// _INP_INSERTED ATAB_NOMTBL_CKEY_VCH (Mon Mar 15 14:16:59 2004 SETFKEYS)
+// _INP_INSERTED ATAB_NOMTBL_CKEY_VCH (Sat May 15 11:48:04 2004 SETFKEYS)
 	$form->_submitValues ['ATAB_NOMTBL_CKEY_VCH'] = $vars['ATAB_NOMTBL_CKEY_VCH'];
 	$form->addElement('hidden', 'ATAB_NOMTBL_CKEY_VCH');
 // @@@@FK_SET_QFVARS_INSERT_ENDS_HERE@@@@

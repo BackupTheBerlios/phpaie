@@ -86,7 +86,7 @@ if (!$LU->isLoggedIn()) {
     echo '</table>';
 } else {
     // Okay, he's in.
-    echo '<h2 align="center">User logged in: '.$LU->getHandle().'</h2>';
+    echo '<h2 align="center">User logged in: '.$LU->getProperty('handle').'</h2>';
     echo "<h3>Congrats, you're in</h3>";
 // Show logout link.
 echo '<p align="center"><a href="liveuser1login.php?logout=1">Logout</a></p>';
@@ -103,7 +103,7 @@ print_r($_POST);
 echo '</pre>';
 
 echo '<br>Handle:';
-print_r($LU->getHandle());
+print_r($LU->getProperty('handle'));
 echo '<br>User Type:';
 print_r($LU->getProperty('userType'));
 

@@ -1,5 +1,5 @@
 <?php
-// $Id: conf3.php,v 1.2 2004/03/17 12:06:31 j-charles Exp $
+// $Id: conf3.php,v 1.3 2004/07/20 21:33:14 j-charles Exp $
 
 // BC hack
 if(!defined('PATH_SEPARATOR')) {
@@ -23,12 +23,12 @@ $liveuserConfig = array(
     'cookie'            => array('name' => 'loginInfo', 'path' => '/', 'domain' => '', 'lifetime' => 30, 'secret' => 'mysecretkey'),
     'autoInit'          => true,
     'authContainers'    => array(0 => array(
-        'type' => 'DB',
-                  'dsn' => array('username' => 'PHPAIE',
-                                 'password' => 'Passwd',
+        		  'type' => 'DB',
+                  'dsn' => array('username' => 'phpaie',
+                                 'password' => 'tdobijor',
                                  'hostspec' => 'localhost',
                                  'phptype'  => 'mysql',
-                                 'database' => 'yourBase'
+                                 'database' => 'Phpaie'
                                  ),
                   'loginTimeout' => 0,
                   'expireTime'   => 0,
@@ -38,17 +38,17 @@ $liveuserConfig = array(
                   'authTableCols' => array('user_id'    => 'ID_INSCRIPTION',
                   'handle'    => 'INSCRIPTION_PSEUDO_CKEY_VCH',
                   'passwd'  => 'INSCRIPTION_PASSWORD_VCH'),
-                  'passwordEncryptionMode' => 'PLAIN'
-                   ),
-
-	),
+                  'passwordEncryptionMode' => 'PLAIN',
+               ),
+    ),
     'permContainer' => array(
         'type'   => 'DB_Medium',
-                  'dsn' => array('username' => 'PHPAIE',
-                                 'password' => 'Passwd',
+//        'type'   => 'DB_Simple',
+                  'dsn' => array('username' => 'phpaie',
+                                 'password' => 'tdobijor',
                                  'hostspec' => 'localhost',
                                  'phptype'  => 'mysql',
-                                 'database' => 'yourBase'
+                                 'database' => 'Phpaie'
                                  ),
          'prefix' => 'liveuser_'
                 )

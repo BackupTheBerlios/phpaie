@@ -1,9 +1,9 @@
-<!-- $Id: loginscreen.php,v 1.1 2004/03/17 11:33:53 j-charles Exp $ -->
+<!-- $Id: loginscreen.php,v 1.2 2004/07/20 21:33:14 j-charles Exp $ -->
 <html>
 <head>
 <title>LiveUser Login Screen</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<style type="text/css">
+<link  rel="stylesheet" href="../css/0818.css" type="text/css">
 <!--
 table {  background-color: #CCCCCC; border-color: #000000 #000000 #000000 black; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
 body {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; color: #000000; background-color: #FFFFFF}

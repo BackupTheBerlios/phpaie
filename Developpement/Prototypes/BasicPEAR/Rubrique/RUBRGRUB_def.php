@@ -81,7 +81,7 @@ return array (
 	'field_quoted'	=>	0,
 	'field_match'	=>	"")
 // @@@@FK_SET_INPUTS_INSERT_BEGINS_HERE@@@@
-// _INP_INSERTED ID_GRUB (Mon Mar 15 14:17:28 2004 SETFKEYS)
+// _INP_INSERTED ID_GRUB (Sat May 15 11:48:33 2004 SETFKEYS)
 	,
 	'ID_GRUB' => array (
 	'field_name'	=>	"ID_GRUB",
@@ -92,7 +92,7 @@ return array (
 	'field_fkey'	=>	1,
 	'field_quoted'	=>	0,
 	'field_match'	=>	"")
-// _INP_INSERTED ID_RUBR (Mon Mar 15 14:17:25 2004 SETFKEYS)
+// _INP_INSERTED ID_RUBR (Sat May 15 11:48:30 2004 SETFKEYS)
 	,
 	'ID_RUBR' => array (
 	'field_name'	=>	"ID_RUBR",
@@ -103,7 +103,7 @@ return array (
 	'field_fkey'	=>	1,
 	'field_quoted'	=>	0,
 	'field_match'	=>	"")
-// _INP_INSERTED ID_EMPLOY (Mon Mar 15 14:17:21 2004 SETFKEYS)
+// _INP_INSERTED ID_EMPLOY (Sat May 15 11:48:26 2004 SETFKEYS)
 	,
 	'ID_EMPLOY' => array (
 	'field_name'	=>	"ID_EMPLOY",
@@ -226,9 +226,9 @@ $page->addBodyContent("    </td>\n");
 $page->addBodyContent("  </tr>\n");
 $page->addBodyContent("</table>\n");
 $page->addBodyContent(( TRUE && isset ($vars['S_ID_I']) && isset ($vars['ID_EMPLOY1'])) ? "<a href=\"rubr.php?ID_GRUB=$vars[S_ID_I]&ID_EMPLOY1=$vars[ID_EMPLOY1]\">Créer une nouvelle rubrique</a>\n" : "<font color=\"#C0C0C0\">Créer une nouvelle rubrique </font>\n");
-// _INP_INSERTED ID_EMPLOY  ( Mon Mar 15 14:17:21 2004 SETFKEYS)
-// _INP_INSERTED ID_RUBR  ( Mon Mar 15 14:17:25 2004 SETFKEYS)
-// _INP_INSERTED ID_GRUB  ( Mon Mar 15 14:17:28 2004 SETFKEYS)
+// _INP_INSERTED ID_EMPLOY  ( Sat May 15 11:48:26 2004 SETFKEYS)
+// _INP_INSERTED ID_RUBR  ( Sat May 15 11:48:30 2004 SETFKEYS)
+// _INP_INSERTED ID_GRUB  ( Sat May 15 11:48:33 2004 SETFKEYS)
 //* @@@@FK_SET_VARS_INSERT_BEGINS_HERE@@@@
 //Insertion automatique du paramètre ID_GRUB 
 print "<input type=\"hidden\" name=\"ID_GRUB\" value=\"$vars[ID_GRUB]\" size=\"11\">\n";
@@ -284,13 +284,13 @@ if ( TRUE && isset ($vars['S_ID_I']) && isset ($vars['ID_EMPLOY1'])) {
 	 $link_0 = &HTML_QuickForm::createElement('static',  'CRéER_UNE_NOUVELLE_RUBRIQUE',  "", "[Créer une nouvelle rubrique]");
  }
 // @@@@FK_SET_QFVARS_INSERT_BEGINS_HERE@@@@
-// _INP_INSERTED ID_GRUB (Mon Mar 15 14:17:28 2004 SETFKEYS)
+// _INP_INSERTED ID_GRUB (Sat May 15 11:48:33 2004 SETFKEYS)
 	$form->_submitValues ['ID_GRUB'] = $vars['ID_GRUB'];
 	$form->addElement('hidden', 'ID_GRUB');
-// _INP_INSERTED ID_RUBR (Mon Mar 15 14:17:25 2004 SETFKEYS)
+// _INP_INSERTED ID_RUBR (Sat May 15 11:48:30 2004 SETFKEYS)
 	$form->_submitValues ['ID_RUBR'] = $vars['ID_RUBR'];
 	$form->addElement('hidden', 'ID_RUBR');
-// _INP_INSERTED ID_EMPLOY (Mon Mar 15 14:17:21 2004 SETFKEYS)
+// _INP_INSERTED ID_EMPLOY (Sat May 15 11:48:26 2004 SETFKEYS)
 	$form->_submitValues ['ID_EMPLOY'] = $vars['ID_EMPLOY'];
 	$form->addElement('hidden', 'ID_EMPLOY');
 // @@@@FK_SET_QFVARS_INSERT_ENDS_HERE@@@@

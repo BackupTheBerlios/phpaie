@@ -19,7 +19,7 @@
 // |     whith some little modifications due to Phpaie implementation :-) |
 // +----------------------------------------------------------------------+
 //
-// $Id: Defrenderer.php,v 1.1 2004/03/17 12:48:10 j-charles Exp $
+// $Id: Defrenderer.php,v 1.2 2004/07/20 21:33:14 j-charles Exp $
 
 require_once('HTML/QuickForm/Renderer.php');
 
