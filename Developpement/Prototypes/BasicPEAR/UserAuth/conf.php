@@ -1,5 +1,5 @@
 <?php
-// $Id: conf.php,v 1.3 2004/07/20 21:33:14 j-charles Exp $
+// $Id: conf.php,v 1.4 2004/07/20 21:45:41 j-charles Exp $
 // BC hack
 if(!defined('PATH_SEPARATOR')) {
     if(defined('DIRECTORY_SEPARATOR') && DIRECTORY_SEPARATOR == "\\") {
@@ -24,10 +24,10 @@ $liveuserConfig = array(
     'authContainers'    => array(0 => array(
         'type' => 'DB',
                   'dsn' => array('username' => 'PHPAIE',
-                                 'password' => 'Koly76Xobo69',
+                                 'password' => 'XXXXXX',
                                  'hostspec' => 'localhost',
                                  'phptype'  => 'mysql',
-                                 'database' => 'PHPAIE_LOGO'
+                                 'database' => 'YOUR_DB_NAME'
                                  ),
                   'loginTimeout' => 0,
                   'expireTime'   => 0,
@@ -46,10 +46,10 @@ $liveuserConfig = array(
     'permContainer' => array(
         'type'   => 'DB_Complex',
                   'dsn' => array('username' => 'PHPAIE',
-                                 'password' => 'Koly76Xobo69',
+                                 'password' => 'XXXXXX',
                                  'hostspec' => 'localhost',
                                  'phptype'  => 'mysql',
-                                 'database' => 'PHPAIE_LOGO'
+                                 'database' => 'YOUR_DB_NAME'
                                  ),
          'prefix' => 'liveuser_'
                 )
