@@ -1,0 +1,12 @@
+-- type de commande à executer :drop table IF EXISTS XXXX;
+-- flush tables;
+drop table IF EXISTS EMPLOY;
+drop table IF EXISTS EMPLOY_seq;
+drop table IF EXISTS INSCRIPTION;
+drop table IF EXISTS INSCRIPTION_seq;
+drop table IF EXISTS CONNECTION;
+drop table IF EXISTS CONNECTION_seq;
+drop table IF EXISTS RUBR;
+drop table IF EXISTS RUBR_seq;
+drop table IF EXISTS GESTAB;
+drop table IF EXISTS ATAB;
